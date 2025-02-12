@@ -12,6 +12,12 @@
   <h1>收录商用免费字体</h1>
 </div>
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://jaywcjlove.github.io/#/sponsor)
+[![CI](https://github.com/jaywcjlove/free-font/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/free-font/actions/workflows/ci.yml)
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/free-font)](https://hub.docker.com/r/wcjiang/free-font)
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/free-font)](https://hub.docker.com/r/wcjiang/free-font)
+[![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/free-font)](https://hub.docker.com/r/wcjiang/free-font)
+
 本项目基于已不再维护的 [字集](https://github.com/wordshub/free-font) 开源项目，旨在收集汉字字体。我创建了这个新项目，并新增了自动生成字体预览封面的脚本，还重新添加了许多中文字体以及一些开源英文字体，以方便《[字帖宝宝](https://github.com/jaywcjlove/copybook-generator)》用户下载和使用。
 
 汉字字体的制作是一项庞大的工程。常用汉字有 6763 个，GBK 标准中有 20902 个，而最新的 GB18030-2022 标准则包含超过 80,000 个字符。由于汉字的复杂性，制作一套完整的中文字体需要大量的专业人士投入精力和时间。我们鼓励大家使用正版字体，共同为中文字体的制作创造一个良好的环境。
@@ -137,7 +143,14 @@ git lfs track "docs/fonts/全字库系列/全字庫正楷體/全字庫正楷體-
 
 [`GitHub Page`](https://jaywcjlove.github.io/free-font/) [`Vercel`](https://free-font.vercel.app) [`Githack`](https://raw.githack.com/jaywcjlove/free-font/main/docs/index.html) ~~[`Netlify`](https://freefont.netlify.app)~~
 
-如果您有资源，可以轻松部署字体网站。只需克隆 `main` 分支的代码，将 [`docs`](./docs/) 目录的静态资源部署到您的静态服务即可。
+您可以轻松部署字体网站，只需克隆 `main` 分支并部署 [`docs`](./docs/) 目录中的静态资源，或直接使用 [gh-pages](https://github.com/jaywcjlove/free-font/tree/gh-pages) 分支进行静态托管，还可以通过 [Docker 镜像](https://hub.docker.com/r/wcjiang/free-font) 便捷部署。
+
+```shell
+docker pull wcjiang/free-font:latest
+docker run --name reference --rm -d -p 9677:3000 wcjiang/free-font:latest
+# Or
+docker run --name reference -itd -p 9677:3000 wcjiang/free-font:latest
+```
 
 ## License
 
